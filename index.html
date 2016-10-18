@@ -1,41 +1,61 @@
 <!DOCTYPE html>
 <html>
+<head>
+<meta charset="utf-8">
+
+<!-- Loading the stylesheets -->
+<link href="css/styles.css" type="text/css" rel="stylesheet">
+
+<title>Safer Taxis</title>
+
+</head>
 <body>
 
 <h1>Safer Taxi Stops - Dashboard</h1>
 
-<div id="a" style="width:500px;height:500px;border:1px solid #000;">
-
-<div id="c" style="width:100px;height:100px;border:1px solid #000; margin-top: 50px; margin-left: 50px;"></div>
-<div id="d" style="width:100px;height:100px;border:1px solid #000; margin-top: 0px; margin-left: 200px;"></div>
-<div id="e" style="width:100px;height:100px;border:1px solid #000; margin-top: 0px; margin-left: 50px;"></div>
-
-</div>
-
-<p id="demo">A Demo Paragraph.</p>
-
 <!-- Button triggering the testFunction -->
 <button type="button" onclick="testFunction()">Try it</button>
 
+<br>
+<br>
+
+<div class="bigframe">
+
+<div id="time">Time:</div>
+<div id="budget"></div>
+<div id="dummy">Dummy field</div>
+
+<div id="passengers">Passengers:</div>
+<div id="speed">Speed:</div>
+<div id="petrol">
+</div>
+
+<div id="fuelgauge" data-value="0">
+<span id="needle"></span>
+</div>
+<strong>Petrol</strong>
+
+</div>
+
+
+
 <!-- JAVASCRIPT starts here -->
+
 <script>
 
 //retrieve the HTML element with id="d"
-var div = document.getElementById("d");
+var div = document.getElementById("petrol");
 //update its text content
-div.textContent = "my text";
+div.textContent = "Petrol";
 
 //define a test function
 function testFunction() {
 
     var firstvariable = 7;
     //retrieve the div container with respective id
-    var div1 = document.getElementById("c");
+    var budgetdiv = document.getElementById("budget");
     //make it display the variable
-    div1.innerHTML = firstvariable;
-
-    var div2 = document.getElementById("e");
-    div2.innerHTML = "Hello World";
+    budgetdiv.innerHTML = "Budget: <br><br>" + firstvariable;
 
     //everything above this comment is executed right away
     setTimeout(function(){ //Delay function
@@ -43,7 +63,7 @@ function testFunction() {
       //everything inside this function is executed 2000ms after the commands
       //outside of this function block
       var firstvariable = 10; //alter the variable
-      div1.innerHTML = firstvariable; //update the variable in the HTML container
+      budgetdiv.innerHTML = "Budget: <br><br>" + firstvariable; //update the variable in the HTML container
 
     }, 2000); //time to wait is set here
 
@@ -51,6 +71,9 @@ function testFunction() {
 
 //JAVASCRIPT ends here
 </script>
+
+<script src='http://ajax.googleapis.com/ajax/libs/mootools/1.4.5/mootools-yui-compressed.js'></script>
+<script src="js/scripts.js"></script>
 
 </body>
 </html>
