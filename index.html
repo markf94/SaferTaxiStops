@@ -4,14 +4,52 @@
 
 <h1>Safer Taxi Stops - Dashboard</h1>
 
-<p id="demo">A Paragraph.</p>
+<div id="a" style="width:500px;height:500px;border:1px solid #000;">
 
-<button type="button" onclick="myFunction()">Try it</button>
+<div id="c" style="width:100px;height:100px;border:1px solid #000; margin-top: 50px; margin-left: 50px;"></div>
+<div id="d" style="width:100px;height:100px;border:1px solid #000; margin-top: 0px; margin-left: 200px;"></div>
+<div id="e" style="width:100px;height:100px;border:1px solid #000; margin-top: 0px; margin-left: 50px;"></div>
 
+</div>
+
+<p id="demo">A Demo Paragraph.</p>
+
+<!-- Button triggering the testFunction -->
+<button type="button" onclick="testFunction()">Try it</button>
+
+<!-- JAVASCRIPT starts here -->
 <script>
-function myFunction() {
-    document.getElementById("demo").innerHTML = "Paragraph changed.";
+
+//retrieve the HTML element with id="d"
+var div = document.getElementById("d");
+//update its text content
+div.textContent = "my text";
+
+//define a test function
+function testFunction() {
+
+    var firstvariable = 7;
+    //retrieve the div container with respective id
+    var div1 = document.getElementById("c");
+    //make it display the variable
+    div1.innerHTML = firstvariable;
+
+    var div2 = document.getElementById("e");
+    div2.innerHTML = "Hello World";
+
+    //everything above this comment is executed right away
+    setTimeout(function(){ //Delay function
+
+      //everything inside this function is executed 2000ms after the commands
+      //outside of this function block
+      var firstvariable = 10; //alter the variable
+      div1.innerHTML = firstvariable; //update the variable in the HTML container
+
+    }, 2000); //time to wait is set here
+
 }
+
+//JAVASCRIPT ends here
 </script>
 
 </body>
