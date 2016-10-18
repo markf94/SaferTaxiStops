@@ -35,8 +35,8 @@ div {
 
 /*leading points target HTML classes*/
 .bigframe {
-  width: 500px;
-  height:500px;
+  width: 600px;
+  height:600px;
   border:1px solid #000;
 }
 
@@ -60,7 +60,7 @@ div {
   margin-right: 50px;
 }
 
-#dummy {
+#passengers {
   width:100px;
   height:100px;
   border:1px solid #000;
@@ -68,7 +68,7 @@ div {
   margin-top: 50px;
 }
 
-#passengers {
+#state {
   width:100px;
   height:100px;
   border:1px solid #000;
