@@ -1,39 +1,5 @@
 $(document).ready(function() {
 
-
-  $('#legendbutton').on('shown.bs.collapse', function() {
-    document.getElementbyId('legendbutton').innerHTML ="fok off";
-  $('#arrow').find(".fa fa-chevron-down").removeClass(".fa fa-chevron-down").addClass(".fa fa-chevron-up");
-  }).on('hidden.bs.collapse', function() {
-    $('#arrow').find(".fa fa-chevron-up").removeClass(".fa fa-chevron-down").addClass(".fa fa-chevron-down");
-  });
-
-
-
-   $("#content1").on('click', function(event) {
-      event.preventDefault();
-  		document.getElementById("content1").parentElement.className = "active";
-      document.getElementById("content2").parentElement.className = "";
-  		document.getElementById("content3").parentElement.className = "";
-  });
-
-  $("#content2").on('click', function(event) {
-  	 event.preventDefault();
-  	 document.getElementById("content1").parentElement.className = "";
-  	 document.getElementById("content2").parentElement.className = "active";
-  	 document.getElementById("content3").parentElement.className = "";
-  });
-
-  $("#content3").on('click', function(event) {
-  	 event.preventDefault();
-  	 document.getElementById("content1").parentElement.className = "";
-  	 document.getElementById("content2").parentElement.className = "";
-  	 document.getElementById("content3").parentElement.className = "active";
-  });
-
-
-
-
     /***************** Article Class Finder ******************/
 
     $('.latest-articles').find('img').each(function() {

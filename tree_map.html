@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['treemap']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Mode of Public Transport', 'Parent', 'Users', 'Color'],
+          ['Metropolitan Public Transport Users in South Africa 2013', null ,  100, 0],
+          ['Rail',  'Metropolitan Public Transport Users in South Africa 2013',  17.5,1],
+          ['Bus',  'Metropolitan Public Transport Users in South Africa 2013', 16.3,2],
+          ['Minibus taxi',   'Metropolitan Public Transport Users in South Africa 2013', 66.2,3],
+        ]);
+
+        /*'National govt. spending on metro public transport 2006/07 - 2016/17' ,                 60.5,            37.4,             2.1*/
+
+        tree = new google.visualization.TreeMap(document.getElementById('chart_div'));
+
+        tree.draw(data, {
+          minColor: '#ffcc66',
+          midColor: '#99ff99',
+          maxColor: '#3399ff',
+          headerHeight: 35,
+          fontSize: '16',
+          title:'Which mode of public transport is used the most?',
+          fontColor: 'black',
+          showScale: false,
+          generateTooltip: showStaticTooltip
+        });
+        function showStaticTooltip(row, size, value) {
+          return '<div style="background:#ffffff; padding:10px;"><span style="font-family:Arial; font-size:20;">' +  data.getValue(row, 2)+
+           '% </span></div>';
+         }
+
+      }
+    </script>
+
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
